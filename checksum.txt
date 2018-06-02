@@ -1,0 +1,23 @@
+b=b'\x08\x00\x00\x00\x00\x1f\x00\x01'
+s=[]
+for i in range(0,len(b),2):
+    b1=bin(b[i])
+    b2=bin(b[i+1])
+    s1=str(b1[2:])
+    s2=str(b2[2:])
+    if(len(s1)<8):
+        s1=(8-len(s1))*'0'+s1
+    if(len(s2)<8):
+        s2=(8-len(s2))*'0'+s2
+    s3=s1+s2
+    s.append(s3)
+
+print(s)
+t=0
+for i in s:
+    t+=int(i,2)
+print(65535-t)
+# t="1000"
+# if(len(t)<8):
+#     t=((8-len(t))*'0')+t
+#     print(t)
